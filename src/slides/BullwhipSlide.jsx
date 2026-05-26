@@ -54,10 +54,17 @@ export default function BullwhipSlide({ isActive }) {
       >
         {levels.map((lvl, index) => (
           <motion.div key={index} className="flow-item" variants={itemVariants}>
-            <div className="flow-step" style={{ background: 'rgba(239, 68, 68, 0.06)', borderColor: 'rgba(239, 68, 68, 0.2)', minWidth: '130px' }}>
-              <div className="flow-label" style={{ color: 'var(--text-primary)', fontSize: '0.85rem', marginBottom: '4px' }}>{lvl.role}</div>
-              <div style={{ color: lvl.color, fontWeight: '700', fontSize: '1.1rem', fontFamily: 'var(--font-display)' }}>{lvl.variance}</div>
-              <div style={{ fontSize: '0.65rem', color: 'var(--text-muted)', marginTop: '2px' }}>{lvl.desc}</div>
+            <div
+              className="flow-step bullwhip-step"
+              style={{
+                '--bullwhip-color': lvl.color,
+                background: 'rgba(239, 68, 68, 0.06)',
+                borderColor: 'rgba(239, 68, 68, 0.2)',
+              }}
+            >
+              <div className="bullwhip-role">{lvl.role}</div>
+              <div className="bullwhip-variance">{lvl.variance}</div>
+              <div className="bullwhip-desc">{lvl.desc}</div>
             </div>
             {index < levels.length - 1 && (
               <div className="flow-arrow" style={{ color: '#ef4444' }}>⚡</div>

@@ -40,6 +40,9 @@ const ignoredSwipeSelectors = [
   '#main-nav',
   '.mobile-menu',
   '.comparison-table-wrapper',
+  '.table-modal',
+  '.table-expand-btn',
+  '.table-close-btn',
   '.interactive-toggle',
   'button',
   'a',
@@ -196,7 +199,7 @@ export default function App() {
             <div className="loader-bar">
               <div className="loader-progress" style={{ width: `${loadProgress}%` }} />
             </div>
-            <p className="loader-text">Inicializando React + 3D Canvas...</p>
+            <p className="loader-text">A apresetanção irá começar...</p>
           </div>
         </div>
       )}

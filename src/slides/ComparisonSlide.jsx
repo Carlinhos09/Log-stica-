@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import ExpandableTable from '../components/ExpandableTable';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -63,8 +64,10 @@ export default function ComparisonSlide({ isActive }) {
         Push <span className="gradient-text">vs</span> Pull
       </motion.h2>
 
-      <motion.div className="comparison-table-wrapper" variants={itemVariants}>
-        <table className="comparison-table">
+      <motion.div variants={itemVariants}>
+        <ExpandableTable title="Push vs Pull">
+          {() => (
+            <table className="comparison-table">
           <thead>
             <tr>
               <th>Critério</th>
@@ -81,7 +84,9 @@ export default function ComparisonSlide({ isActive }) {
               </tr>
             ))}
           </tbody>
-        </table>
+            </table>
+          )}
+        </ExpandableTable>
       </motion.div>
 
       <motion.div className="interactive-toggle" variants={itemVariants}>

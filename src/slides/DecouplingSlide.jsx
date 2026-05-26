@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import ExpandableTable from '../components/ExpandableTable';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -41,8 +42,10 @@ export default function DecouplingSlide({ isActive }) {
         O Ponto de Desacoplamento é a fronteira física e de informação na cadeia de suprimentos que separa as atividades puramente empurradas (baseadas em previsão) das atividades puxadas (acionadas por pedidos firmes).
       </motion.p>
 
-      <motion.div className="comparison-table-wrapper" variants={itemVariants}>
-        <table className="comparison-table" style={{ fontSize: '0.82rem' }}>
+      <motion.div variants={itemVariants}>
+        <ExpandableTable title="Ponto de Desacoplamento">
+          {() => (
+            <table className="comparison-table decoupling-table">
           <thead>
             <tr>
               <th style={{ width: '80px' }}>Sigla</th>
@@ -63,7 +66,9 @@ export default function DecouplingSlide({ isActive }) {
               </tr>
             ))}
           </tbody>
-        </table>
+            </table>
+          )}
+        </ExpandableTable>
       </motion.div>
 
       <motion.div className="highlight-box" variants={itemVariants} style={{ borderLeft: '3px solid var(--accent-magenta)', background: 'rgba(244, 114, 182, 0.04)' }}>
