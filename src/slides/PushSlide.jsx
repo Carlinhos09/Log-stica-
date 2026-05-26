@@ -62,7 +62,7 @@ export default function PushSlide({ isActive }) {
 
       <motion.div className="push-flow" variants={containerVariants}>
         {flowSteps.map((step, index) => (
-          <motion.div key={index} style={{ display: 'flex', alignItems: 'center' }} variants={itemVariants}>
+          <motion.div key={index} className="flow-item" variants={itemVariants}>
             <div className="flow-step">
               <div className="flow-icon">{step.icon}</div>
               <div className="flow-label">{step.label}</div>

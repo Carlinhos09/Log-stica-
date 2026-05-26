@@ -61,8 +61,8 @@ export default function PullSlide({ isActive }) {
 
       <motion.div className="pull-flow" variants={containerVariants}>
         {flowSteps.map((step, index) => (
-          <motion.div key={index} style={{ display: 'flex', alignItems: 'center' }} variants={itemVariants}>
-            <div className="pull-step">
+          <motion.div key={index} className="flow-item" variants={itemVariants}>
+            <div className="flow-step pull-step">
               <div className="flow-icon">{step.icon}</div>
               <div className="flow-label">{step.label}</div>
             </div>

@@ -75,9 +75,9 @@ export default function ComparisonSlide({ isActive }) {
           <tbody>
             {tableRows.map((row, i) => (
               <tr key={i}>
-                <td>{row.criteria}</td>
-                <td className="push-col">{row.push}</td>
-                <td className="pull-col">{row.pull}</td>
+                <td data-label="Critério">{row.criteria}</td>
+                <td data-label="Push" className="push-col">{row.push}</td>
+                <td data-label="Pull" className="pull-col">{row.pull}</td>
               </tr>
             ))}
           </tbody>

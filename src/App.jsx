@@ -36,6 +36,18 @@ const slideTitles = [
   'Considerações Finais'
 ];
 
+const ignoredSwipeSelectors = [
+  '#main-nav',
+  '.mobile-menu',
+  '.comparison-table-wrapper',
+  '.interactive-toggle',
+  'button',
+  'a',
+  'input',
+  'select',
+  'textarea',
+].join(',');
+
 export default function App() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loading, setLoading] = useState(true);
@@ -109,13 +121,18 @@ export default function App() {
 
     // 2. Touch Swipe
     const handleTouchStart = (e) => {
+      const target = e.target;
+
       touchStart.current = {
         x: e.changedTouches[0].screenX,
-        y: e.changedTouches[0].screenY
+        y: e.changedTouches[0].screenY,
+        ignore: target instanceof Element && target.closest(ignoredSwipeSelectors),
       };
     };
 
     const handleTouchEnd = (e) => {
+      if (touchStart.current.ignore) return;
+
       const diffX = e.changedTouches[0].screenX - touchStart.current.x;
       const diffY = e.changedTouches[0].screenY - touchStart.current.y;
 

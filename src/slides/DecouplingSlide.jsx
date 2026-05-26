@@ -55,11 +55,11 @@ export default function DecouplingSlide({ isActive }) {
           <tbody>
             {strategies.map((strat, i) => (
               <tr key={i}>
-                <td style={{ fontWeight: 'bold', color: 'var(--accent-cyan)', fontFamily: 'var(--font-display)' }}>{strat.acronym}</td>
-                <td><strong>{strat.name}</strong></td>
-                <td style={{ color: 'rgba(249, 115, 22, 0.8)' }}>{strat.push}</td>
-                <td style={{ color: 'rgba(6, 182, 212, 0.8)' }}>{strat.pull}</td>
-                <td style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>{strat.desc}</td>
+                <td data-label="Sigla" style={{ fontWeight: 'bold', color: 'var(--accent-cyan)', fontFamily: 'var(--font-display)' }}>{strat.acronym}</td>
+                <td data-label="Estratégia"><strong>{strat.name}</strong></td>
+                <td data-label="Fase Push" style={{ color: 'rgba(249, 115, 22, 0.8)' }}>{strat.push}</td>
+                <td data-label="Fase Pull" style={{ color: 'rgba(6, 182, 212, 0.8)' }}>{strat.pull}</td>
+                <td data-label="Aplicação" style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>{strat.desc}</td>
               </tr>
             ))}
           </tbody>

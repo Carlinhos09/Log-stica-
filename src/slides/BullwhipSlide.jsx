@@ -53,7 +53,7 @@ export default function BullwhipSlide({ isActive }) {
         variants={containerVariants}
       >
         {levels.map((lvl, index) => (
-          <motion.div key={index} style={{ display: 'flex', alignItems: 'center' }} variants={itemVariants}>
+          <motion.div key={index} className="flow-item" variants={itemVariants}>
             <div className="flow-step" style={{ background: 'rgba(239, 68, 68, 0.06)', borderColor: 'rgba(239, 68, 68, 0.2)', minWidth: '130px' }}>
               <div className="flow-label" style={{ color: 'var(--text-primary)', fontSize: '0.85rem', marginBottom: '4px' }}>{lvl.role}</div>
               <div style={{ color: lvl.color, fontWeight: '700', fontSize: '1.1rem', fontFamily: 'var(--font-display)' }}>{lvl.variance}</div>
